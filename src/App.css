@@ -1,0 +1,26 @@
+.boxShdaow{
+    box-shadow:0 -10px 30px -5px #7e9fd9;
+}
+
+.cardShadow{
+    box-shadow:0 -10px 30px -5px #7e9fd9;
+}
+
+.homepage_bg{
+    background-image: url('../src/assets/Images/bghome.svg');
+}
+
+.custom_shadow{
+    box-shadow:10px 10px 30px 20px #7e9fd9;
+}
+.custom_shadow2{
+    box-shadow:-10px -10px 0px 5px #f9fbfe;
+}
+
+.custom_shadow3{
+    box-shadow:10px 10px 0px 5px rgb(255 214 10);
+}
+
+.active{
+    color: #FFF970;
+}
