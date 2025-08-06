@@ -13,7 +13,7 @@ This starter pack includes a basic setup for using **Tailwind CSS with React**. 
 
 1. Clone the repository to your local machine.
     ```sh
-    git clone https://github.com/Lovekush-1509/studynotion.git
+    git clone https://github.com/Lovekush-1509/studyPulse.git
     ```
 
 1. Install the required packages.

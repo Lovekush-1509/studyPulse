@@ -26,10 +26,10 @@ app.use(fileUpload({
     useFileDir:"/tmp"
 }));
 
-app.use("/studynotion/version-1.0/userRoute",userRoute);
-app.use("/studynotion/version-1.0/courseRoute",courseRoute);
-app.use("/studynotion/version-1.0/profileRoute",profileRoute);
-app.use("/studynotion/version-1.0/paymentRoute",paymentRoute);
+app.use("/studynotion/version-1.0/auth",userRoute);
+app.use("/studynotion/version-1.0/course",courseRoute);
+app.use("/studynotion/version-1.0/profile",profileRoute);
+app.use("/studynotion/version-1.0/payment",paymentRoute);
 
 app.get("/",(req,res)=>{
     return res.json({
