@@ -18,7 +18,7 @@ cloudinaryConnect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:process.env.FRONTEND_URL,
     credentials:true,
 }));
 app.use(fileUpload({
@@ -42,44 +42,44 @@ app.listen(PORT,()=>{
     console.log(`Your server started on ${PORT}`);
 });
 
-// http://localhost:4000/studynotion/version-1.0/userRoute/signup
-// http://localhost:4000/studynotion/version-1.0/userRoute/sendotp
-// http://localhost:4000/studynotion/version-1.0/userRoute/LogIn
-// http://localhost:4000/studynotion/version-1.0/userRoute/reset-password-token
-// http://localhost:4000/studynotion/version-1.0/userRoute/reset-password
-// http://localhost:4000/studynotion/version-1.0/userRoute/change-password
+// http://localhost:4000/studynotion/version-1.0/auth/signup
+// http://localhost:4000/studynotion/version-1.0/auth/sendotp
+// http://localhost:4000/studynotion/version-1.0/auth/LogIn
+// http://localhost:4000/studynotion/version-1.0/auth/reset-password-token
+// http://localhost:4000/studynotion/version-1.0/auth/reset-password
+// http://localhost:4000/studynotion/version-1.0/auth/change-password
 
 
 
-// http://localhost:4000/studynotion/version-1.0/profileRoute/get-user-details
-// http://localhost:4000/studynotion/version-1.0/profileRoute/get-enrolled-course
-// http://localhost:4000/studynotion/version-1.0/profileRoute/delete-profile
-// http://localhost:4000/studynotion/version-1.0/profileRoute/update-profile
-// http://localhost:4000/studynotion/version-1.0/profileRoute/update-profile-pic
-
-
-
-
-
-// http://localhost:4000/studynotion/version-1.0/paymentRoute/verify-signature
-// http://localhost:4000/studynotion/version-1.0/paymentRoute/capture-payment
+// http://localhost:4000/studynotion/version-1.0/profile/get-user-details
+// http://localhost:4000/studynotion/version-1.0/profile/get-enrolled-course
+// http://localhost:4000/studynotion/version-1.0/profile/delete-profile
+// http://localhost:4000/studynotion/version-1.0/profile/update-profile
+// http://localhost:4000/studynotion/version-1.0/profile/update-profile-pic
 
 
 
 
 
+// http://localhost:4000/studynotion/version-1.0/payment/verify-signature
+// http://localhost:4000/studynotion/version-1.0/payment/capture-payment
 
-// http://localhost:4000/studynotion/version-1.0/courseRoute/upload-course
-// http://localhost:4000/studynotion/version-1.0/courseRoute/create-section
-// http://localhost:4000/studynotion/version-1.0/courseRoute/update-section
-// http://localhost:4000/studynotion/version-1.0/courseRoute/create-sub-section
-// http://localhost:4000/studynotion/version-1.0/courseRoute/delete-section
-// http://localhost:4000/studynotion/version-1.0/courseRoute/update-sub-section
-// http://localhost:4000/studynotion/version-1.0/courseRoute/delete-sub-section
 
-// http://localhost:4000/studynotion/version-1.0/courseRoute/get-all-courses
-// http://localhost:4000/studynotion/version-1.0/courseRoute/get-course-details
 
-// http://localhost:4000/studynotion/version-1.0/courseRoute/create-category
-// http://localhost:4000/studynotion/version-1.0/courseRoute/get-category
-// http://localhost:4000/studynotion/version-1.0/courseRoute/get-category-course
+
+
+
+// http://localhost:4000/studynotion/version-1.0/course/upload-course
+// http://localhost:4000/studynotion/version-1.0/course/create-section
+// http://localhost:4000/studynotion/version-1.0/course/update-section
+// http://localhost:4000/studynotion/version-1.0/course/create-sub-section
+// http://localhost:4000/studynotion/version-1.0/course/delete-section
+// http://localhost:4000/studynotion/version-1.0/course/update-sub-section
+// http://localhost:4000/studynotion/version-1.0/course/delete-sub-section
+
+// http://localhost:4000/studynotion/version-1.0/course/get-all-courses
+// http://localhost:4000/studynotion/version-1.0/course/get-course-details
+
+// http://localhost:4000/studynotion/version-1.0/course/create-category
+// http://localhost:4000/studynotion/version-1.0/course/get-category
+// http://localhost:4000/studynotion/version-1.0/course/get-category-course
