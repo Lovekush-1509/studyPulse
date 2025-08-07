@@ -16,7 +16,7 @@ import LearningLanguageSection from "../components/core/HomePage/LearningLanguag
 import TimelineSection from "../components/core/HomePage/Timeline"
 
 function Home() {
-  // console.log("hello i am inside Home")
+  console.log("hello i am inside Home")
   return (
     <div>
       {/* Section 1 */}
