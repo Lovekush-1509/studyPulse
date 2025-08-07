@@ -5,9 +5,9 @@ import { catalogData } from "../apis"
 
 export const getCatalogPageData = async (categoryId) => {
   const toastId = toast.loading("Loading...")
-  console.log("catalogData.CATALOGPAGEDATA_API:",catalogData.CATALOGPAGEDATA_API)
   let result = []
   try {
+    console.log("catalogData.CATALOGPAGEDATA_API:",catalogData.CATALOGPAGEDATA_API)
     const response = await apiConnector(
       "POST",
       catalogData.CATALOGPAGEDATA_API,

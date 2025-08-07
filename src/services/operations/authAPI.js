@@ -19,6 +19,7 @@ export function sendOtp(email, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
+      console.log("SENDOTP_API:",SENDOTP_API)
       const response = await apiConnector("POST", SENDOTP_API, {
         email,
         checkUserPresent: true,
@@ -56,6 +57,7 @@ export function signUp(
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
+      console.log("SIGNUP_API:",SIGNUP_API)
       const response = await apiConnector("POST", SIGNUP_API, {
         accountType,
         firstName,
@@ -86,9 +88,9 @@ export function signUp(
 export function login(email, password, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
-    console.log("login api:",LOGIN_API)
     dispatch(setLoading(true))
     try {
+      console.log("login api:",LOGIN_API)
       const response = await apiConnector("POST", LOGIN_API, {
         email,
         password,
@@ -122,6 +124,7 @@ export function getPasswordResetToken(email, setEmailSent) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
+      console.log("RESETPASSTOKEN_API:",RESETPASSTOKEN_APIGIN_API)
       const response = await apiConnector("POST", RESETPASSTOKEN_API, {
         email,
       })
@@ -148,6 +151,7 @@ export function resetPassword(password, confirmPassword, token, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
+      console.log("RESETPASSWORD_API:",RESETPASSWORD_API)
       const response = await apiConnector("POST", RESETPASSWORD_API, {
         password,
         confirmPassword,
