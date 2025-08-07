@@ -48,7 +48,6 @@ const userSchema = mongoose.Schema({
 
     contactNo:{
         type:String,
-        required:true,
     },
 
     image:{

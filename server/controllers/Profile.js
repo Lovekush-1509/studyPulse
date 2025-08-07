@@ -6,26 +6,29 @@ const {uploadToCloudinary} = require("../utils/uploadToCloudinary");
 
 exports.updateProfile = async(req,res) =>{
     try{
-        const {DOB,contactNo,Gender,about} = req.body;
+        const {dateOfBirth,contactNumber,gender,firstName,lastName,about} = req.body;
         const id = req.user.id;
-        if(!contactNo || !Gender){
-            return res.json({
-                success:false,
-                meassage:'All fields are required',
-            });
-        }
+        // if(!contactNo || !Gender){
+        //     return res.json({
+        //         success:false,
+        //         meassage:'All fields are required',
+        //     });
+        // }
         const user = await User.findById(id);
         console.log(user.additionalInfo);
         const profileId = user.additionalInfo;
         const updatedProfile = await Profile.findById(profileId);
-        updatedProfile.DOB = DOB;
-        updatedProfile.contactNo = contactNo;
-        updatedProfile.Gender = Gender;
+        updatedProfile.DOB = dateOfBirth;
+        updatedProfile.contactNo = contactNumber;
+        updatedProfile.Gender = gender;
         updatedProfile.About = about;
+        updatedProfile.firstName = firstName;
+        updatedProfile.About = lastName;
         await updatedProfile.save();
         return res.json({
             success:true,
             message:"Profile updated succesfully",
+            updatedUserDetails:updatedProfile,
         });
     }catch(e){
         return res.json({
