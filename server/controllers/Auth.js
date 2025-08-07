@@ -37,7 +37,7 @@ exports.sendOTP = async(req,res) =>{
             const tempOTP = new OTP({otp:otp,email});
         const OTPVal = await tempOTP.save();
         return res.json({
-            succes:true,
+            success:true,
             message:"OTP sent successfully",
             OTPVal,
         })
@@ -58,7 +58,7 @@ exports.signUp = async(req,res) =>{
         const {
             lastName,
             firstName,
-            contactNo,
+            contactNo="",
             accountType,
             password,
             confirmPassword,
@@ -68,7 +68,7 @@ exports.signUp = async(req,res) =>{
 
         console.log(req.body);
 
-        if(!lastName || !firstName || !contactNo || !password || !confirmPassword || !email || !otp){
+        if(!lastName || !firstName || !password || !confirmPassword || !email || !otp){
             return res.json({
                 success:false,
                 message:"All field are required......",
@@ -92,7 +92,6 @@ exports.signUp = async(req,res) =>{
         }
 
         const recentOTP = await OTP.findOne({email}).sort({createdAt:-1}).limit(1);
-        console.log(recentOTP.otp,otp)
         if(recentOTP.length == 0){
             return res.json({
                 success:false,
@@ -104,7 +103,7 @@ exports.signUp = async(req,res) =>{
                 message:"OTP didn't match",
             });
         }
-
+        
         const hashedPassword = await bcrypt.hash(password,10);
         const profileInfo = new Profile({
             DOB:null,
@@ -112,9 +111,10 @@ exports.signUp = async(req,res) =>{
             Age:null,
             contactNo:null,
         });
-
+        
         const profileId = await profileInfo.save();
-
+        
+        console.log("creating user")
         const user = await User.create({
             lastName,
             firstName,
@@ -126,7 +126,8 @@ exports.signUp = async(req,res) =>{
             profileInfo:profileId._id,
             image:`https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
         });
-
+        console.log("creating user successfully")
+        
 
         return res.json({
             success:true,
@@ -137,8 +138,8 @@ exports.signUp = async(req,res) =>{
     }catch(e){
         return res.json({
             success:false,
-            message:"Error occured during sign up",
             error:e.message,
+            message:"Error occured during sign up",
         });
     }
 }
@@ -188,7 +189,7 @@ exports.LogIn = async(req,res) =>{
             return res.cookie("token",token,options).json({
                 success:true,
                 message:"Logged In succesfully",
-                data:userExist
+                user:userExist
             });
         }else{
             return res.json({

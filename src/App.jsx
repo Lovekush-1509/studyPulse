@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Route, Routes, useNavigate } from "react-router-dom"
 
 // Components
-import Navbar from "./components/Common/Navbar"
+import Navbar from "./components/common/Navbar"
 import OpenRoute from "./components/core/Auth/OpenRoute"
 import PrivateRoute from "./components/core/Auth/PrivateRoute"
 import AddCourse from "./components/core/Dashboard/AddCourse"
@@ -27,8 +27,9 @@ import Error from "./pages/Error"
 import ForgotPassword from "./pages/ForgotPassword"
 // Pages
 import Home from "./pages/Home"
-import Login from "./pages/Login"
-import Signup from "./pages/Signup"
+import Login from './pages/LogIn'
+import Signup from "./pages/SignUp";
+
 import UpdatePassword from "./pages/UpdatePassword"
 import VerifyEmail from "./pages/VerifyEmail"
 import ViewCourse from "./pages/ViewCourse"

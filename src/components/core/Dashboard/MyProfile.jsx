@@ -3,10 +3,11 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 import { formattedDate } from "../../../utils/dateFormatter"
-import IconBtn from "../../Common/IconBtn"
+import IconBtn from "../../common/IconBtn"
 
 export default function MyProfile() {
   const { user } = useSelector((state) => state.profile)
+  console.log(user)
   const navigate = useNavigate()
 
   return (
