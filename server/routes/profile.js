@@ -10,7 +10,7 @@ const {
     updateProfilePic,
 } = require("../controllers/Profile");
 
-router.delete("/delete-profile",auth,isStudent,deleteProfile);
+router.delete("/delete-profile",auth,deleteProfile);
 router.put("/update-profile",auth,updateProfile);
 router.get("/get-enrolled-course",auth,getEnrolledCourse);
 router.get("/get-user-details",auth,getUserDetails);

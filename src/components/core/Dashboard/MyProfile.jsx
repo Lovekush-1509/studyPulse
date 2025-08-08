@@ -7,8 +7,9 @@ import IconBtn from "../../common/IconBtn"
 
 export default function MyProfile() {
   const { user } = useSelector((state) => state.profile)
-  // console.log(user)
+  console.log("inside profile:",user)
   const navigate = useNavigate()
+  const additionalDetails = user?.additionalInfo;
 
   return (
     <>
@@ -52,12 +53,12 @@ export default function MyProfile() {
         </div>
         <p
           className={`${
-            user?.additionalDetails?.about
+            additionalDetails?.About
               ? "text-richblack-5"
               : "text-richblack-400"
           } text-sm font-medium`}
         >
-          {user?.additionalDetails?.about ?? "Write Something About Yourself"}
+          {additionalDetails?.About ?? "Write Something About Yourself"}
         </p>
       </div>
       <div className="my-10 flex flex-col gap-y-10 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
@@ -91,7 +92,7 @@ export default function MyProfile() {
             <div>
               <p className="mb-2 text-sm text-richblack-600">Gender</p>
               <p className="text-sm font-medium text-richblack-5">
-                {user?.additionalDetails?.gender ?? "Add Gender"}
+                {additionalDetails?.Gender ?? "Add Gender"}
               </p>
             </div>
           </div>
@@ -105,13 +106,13 @@ export default function MyProfile() {
             <div>
               <p className="mb-2 text-sm text-richblack-600">Phone Number</p>
               <p className="text-sm font-medium text-richblack-5">
-                {user?.additionalDetails?.contactNumber ?? "Add Contact Number"}
+                {additionalDetails?.contactNo ?? "Add Contact Number"}
               </p>
             </div>
             <div>
               <p className="mb-2 text-sm text-richblack-600">Date Of Birth</p>
               <p className="text-sm font-medium text-richblack-5">
-                {formattedDate(user?.additionalDetails?.dateOfBirth) ??
+                {formattedDate(additionalDetails.DOB) ??
                   "Add Date Of Birth"}
               </p>
             </div>

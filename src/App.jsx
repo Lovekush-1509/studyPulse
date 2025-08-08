@@ -46,7 +46,7 @@ function App() {
     if (localStorage.getItem("token")) {
       const token = JSON.parse(localStorage.getItem("token"))
       dispatch(getUserDetails(token, navigate))
-      console.log("test");
+      // console.log("test");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

@@ -22,9 +22,10 @@ exports.updateProfile = async(req,res) =>{
         updatedProfile.contactNo = contactNumber;
         updatedProfile.Gender = gender;
         updatedProfile.About = about;
-        updatedProfile.firstName = firstName;
-        updatedProfile.About = lastName;
-        await updatedProfile.save();
+        // updatedProfile.firstName = firstName;
+        // updatedProfile.lastName = lastName;
+        const updprofile = await updatedProfile.save();
+        console.log("inside update profile:",updprofile)
         return res.json({
             success:true,
             message:"Profile updated succesfully",
@@ -100,17 +101,15 @@ exports.getUserDetails = async(req,res) =>{
 
 exports.updateProfilePic = async(req,res) =>{
     try{
-        const file = req.files.image;
+        const file = req.files.files;
         const userId = req.user.id;
-        
         const cloudinaryUpload = await uploadToCloudinary(file,process.env.FOLDER_NAME);
-        // console.log(cloudinaryUpload.secure_url);
+        console.log(cloudinaryUpload.secure_url);
         const updatedDetails = await User.findByIdAndUpdate({_id:userId},
                                                             {
                                                                 image:cloudinaryUpload.secure_url,
                                                             },{new:true}
         );
-
         if(!updatedDetails){
             return res.json({
                 success:false,
@@ -125,8 +124,8 @@ exports.updateProfilePic = async(req,res) =>{
     }catch(e){
         return res.json({
             success:false,
-            mess:"nhi hua bhai",
-            message:e.meassage,
+            error:e.message,
+            message:"nhi hua bhai",
         });
     }
 }
@@ -142,10 +141,11 @@ exports.getEnrolledCourse = async(req,res) =>{
                 message:"No course found",
             });
         }
+        console.log("hello i am inside enrolled course",courses.courses)
         return res.json({
             success:true,
-            message:"course found succesfully",
-            data:courses,
+            message:"course found successfully",
+            data:courses.courses,
         }); 
     }catch(e){
         return res.json({

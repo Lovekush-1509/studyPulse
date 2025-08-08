@@ -158,7 +158,7 @@ exports.LogIn = async(req,res) =>{
         }
 
 
-        const userExist = await User.findOne({email});
+        const userExist = await User.findOne({email}).populate("additionalInfo");
         if(!userExist){
             return res.json({
                 success:false,
@@ -188,7 +188,7 @@ exports.LogIn = async(req,res) =>{
             console.log("user data",userExist);
             return res.cookie("token",token,options).json({
                 success:true,
-                message:"Logged In succesfully",
+                message:"Logged In successfully",
                 user:userExist
             });
         }else{
@@ -214,6 +214,7 @@ exports.changePassword = async(req,res) =>{
     try{
         const id = req.user.id;
         const {currentPassword,newPassword} = req.body;
+        console.log("inside change passwrd:",req.body)
         if(!currentPassword || !newPassword){
             return res.json({
                 success:false,
