@@ -8,7 +8,8 @@
 ---
 
 ## 🌐 Live Demo
-[🚀 Visit StudyPulse](https://studypulse-phi.vercel.app)
+🚀[Visit StudyPulse](https://studypulse-phi.vercel.app)
+> ⚠ **Note:** If the website is not opening, try accessing it in **Incognito Mode**.
 
 ---
 
