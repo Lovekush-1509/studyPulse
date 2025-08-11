@@ -5,7 +5,7 @@ const User = require("../models/user");
 exports.auth = async(req,res,next) =>{
     try{
 
-        console.log("token in cookie:",req.cookies)
+        console.log("token in cookie:",req.cookies.token)
 
         const token = req.body.token || req.cookies.token || req.headers.authorization?.split(" ")[1];
         console.log(token)
