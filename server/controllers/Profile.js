@@ -29,7 +29,7 @@ exports.updateProfile = async(req,res) =>{
         return res.json({
             success:true,
             message:"Profile updated succesfully",
-            updatedUserDetails:updatedProfile,
+            user:user,
         });
     }catch(e){
         return res.json({
