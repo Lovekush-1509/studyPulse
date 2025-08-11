@@ -1,36 +1,106 @@
+# 📚 StudyPulse
 
-# Frontend View
-https://www.figma.com/design/SmM1JkwrLdyp39k7kTYVhm/Untitled?node-id=0-1&m=dev&t=Wlv7kOPb6oyOG76B-1
+![MERN](https://img.shields.io/badge/Stack-MERN-green?style=for-the-badge) ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/Status-Live-brightgreen?style=for-the-badge) ![Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge)
+
+> **Empowering Learning, One Click at a Time**  
+> StudyPulse is a **full-featured Ed-Tech platform** built with the **MERN stack** that enables students to learn, track progress, and engage with interactive educational content. Designed for smooth performance, modern UI, and a seamless user experience.
+
+---
+
+## 🌐 Live Demo
+[🚀 Visit StudyPulse](https://studypulse-phi.vercel.app)
+
+---
+
+## ✨ Features
+- 🔐 **User Authentication** – Secure login & signup with JWT
+- 👨‍🏫 **Role-based Access** – Student & Admin/Instructor dashboards
+- 📚 **Course Management** – Create, edit, delete, and publish courses
+- 💳 **Payment Integration** – Easy and secure payments
+- ☁ **Cloud Storage** – Media hosting with Cloudinary
+- 📱 **Responsive UI** – Fully mobile-friendly design
+- ⚡ **Real-time Updates** – Dynamic UI without page reload
+
+---
+
+## 🛠️ Tech Stack
+**Frontend:** React.js, Tailwind CSS  
+**Backend:** Node.js, Express.js  
+**Database:** MongoDB (Mongoose)  
+**Authentication:** JWT & Cookies  
+**Cloud Storage:** Cloudinary  
+**Deployment:** Vercel (Frontend), Render/Other (Backend)
+
+---
+
+## 📂 Folder Structure
+```
+studypulse/
+│
+├── components/   # Reusable UI components
+├── pages/        # Application pages
+├── server/       # Backend (Node + Express + MongoDB)
+├── utils/ 
+.
+.
+.
+.
+└── README.md     # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Lovekush-1509/studyPulse.git
+cd studyPulse
+```
+
+### 2️⃣ Install Dependencies
+```bash
+# Backend
+cd server
+npm install
+
+# Frontend
+cd ..
+npm install
+```
+
+### 3️⃣ Configure Environment Variables
+Create a `.env` file inside **server/** and add:
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+PAYMENT_GATEWAY_KEY=your_payment_key
+PAYMENT_GATEWAY_SECRET=your_payment_secret
+```
+
+### 4️⃣ Run the Development Servers
+```bash
+# Backend
+cd server
+npm run dev
+
+# Frontend
+cd ..
+npm start
+```
+
+### 5️⃣ Open in Browser
+```
+Frontend: http://localhost:3000
+Backend:  http://localhost:4000
+```
 
 
-# React & Tailwind CSS Starter Pack
+## 🐞 Bug Reporting
+If you find any bugs, please **email me** at **lovekush2022ucb6052@gmail.com** with the subject:  
+`studypulse bug found`
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
-
-## Usage
-
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
-
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/Lovekush-1509/studyPulse.git
-    ```
-
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
-
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
-
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+**Made with ❤️ by [Lovekush](https://www.linkedin.com/in/lovekush-84514b26a/)**

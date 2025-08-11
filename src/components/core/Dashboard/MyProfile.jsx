@@ -7,7 +7,7 @@ import IconBtn from "../../common/IconBtn"
 
 export default function MyProfile() {
   const { user } = useSelector((state) => state.profile)
-  console.log("inside profile:",user)
+  console.log("inside profile:",user?.additionalInfo)
   const navigate = useNavigate()
   const additionalDetails = user?.additionalInfo;
 
