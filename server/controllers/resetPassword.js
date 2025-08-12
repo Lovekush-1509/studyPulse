@@ -28,7 +28,7 @@ exports.resetPasswordToken = async(req,res) =>{
                                                             resetPasswordExpired:Date.now()+5*60*1000,
         },{new:true});
 
-        const url = process.env.FRONTEND_LINK+`/${token}`;
+        const url = process.env.FRONTEND_URL+`/${token}`;
         await mailSender(email,` click here to go reset password page <a href=${url}>click here</a>`,"Reset Your Password By Clicking Here");
         return res.json({
             success:true,

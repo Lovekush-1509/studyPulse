@@ -29,6 +29,7 @@ export function sendOtp(email, navigate) {
       console.log(response.data.success)
 
       if (!response.data.success) {
+        toast.error(response.data.message)
         throw new Error(response.data.message)
       }
 
@@ -71,6 +72,7 @@ export function signUp(
       console.log("SIGNUP API RESPONSE............", response)
 
       if (!response.data.success) {
+        toast.error(response.data.message)
         throw new Error(response.data.message)
       }
       toast.success("Signup Successful")
@@ -99,6 +101,7 @@ export function login(email, password, navigate) {
       console.log("LOGIN API RESPONSE............", response)
 
       if (!response.data.success) {
+        toast.error(response.data.message)
         throw new Error(response.data.message)
       }
 
@@ -108,7 +111,6 @@ export function login(email, password, navigate) {
         ? response.data.user.image
         : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`
       dispatch(setUser({ ...response.data.user, image: userImage }))
-      // console.log("token in login api:",response.data.user.token)
       localStorage.setItem("token", JSON.stringify(response.data.user.token))
       navigate("/dashboard/my-profile")
     } catch (error) {
@@ -133,6 +135,7 @@ export function getPasswordResetToken(email, setEmailSent) {
       console.log("RESETPASSTOKEN RESPONSE............", response)
 
       if (!response.data.success) {
+        toast.error(response.data.message)
         throw new Error(response.data.message)
       }
 
@@ -162,6 +165,7 @@ export function resetPassword(password, confirmPassword, token, navigate) {
       console.log("RESETPASSWORD RESPONSE............", response)
 
       if (!response.data.success) {
+        toast.error(response.data.message)
         throw new Error(response.data.message)
       }
 
