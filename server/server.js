@@ -10,6 +10,7 @@ const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const {dbConnect} = require("./config/database");
 const {cloudinaryConnect} = require("./config/cloudinary");
+const startUserDetailsJob = require("./jobs/getUserDataJob");
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
@@ -43,6 +44,10 @@ app.get("/",(req,res)=>{
 app.listen(PORT,()=>{
     console.log(`Your server started on ${PORT}`);
 });
+
+
+//job
+startUserDetailsJob();
 
 // http://localhost:4000/studynotion/version-1.0/auth/signup
 // http://localhost:4000/studynotion/version-1.0/auth/sendotp
