@@ -11,4 +11,5 @@ export const NavbarLinks = [
     title: "About Us",
     path: "/about",
   },
+  
 ];
